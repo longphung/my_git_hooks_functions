@@ -39,7 +39,14 @@ impl EmojisAttacher {
                         );
                         continue;
                     }
-                    return format!("{}:\n", &messages_types[selection - 1]);
+
+                    let mapped_selection = &messages_types[selection - 1];
+
+                    if mapped_selection == "<empty>" {
+                        return String::new();
+                    }
+
+                    return format!("{}:\n", mapped_selection);
                 }
                 Err(_) => {
                     println!("\nNot a 1 valid choice. Choose again.\n");
@@ -76,6 +83,8 @@ fn get_message_types() -> Vec<String> {
 
         types.push(line[2..].split(":").collect());
     }
+
+    types.push(vec!["<empty>"]);
 
     let types: Vec<String> = types.into_iter().map(|x| String::from(x[0])).collect();
 

@@ -1,8 +1,7 @@
-use home;
-
 use std::fs::read_to_string;
 use std::io;
 use std::path::Path;
+use crate::PrepareCommitMsgParams;
 
 pub struct EmojisAttacher;
 
@@ -57,15 +56,16 @@ impl EmojisAttacher {
 }
 
 fn get_message_types() -> Vec<String> {
-    let mut git_message_path_string;
-    match home::home_dir() {
-        Some(path) => git_message_path_string = path,
-        None => panic!("Impossible to get your home dir!"),
-    }
+    // let mut git_message_path_string;
+    // match home::home_dir() {
+    //     Some(path) => git_message_path_string = path,
+    //     None => panic!("Impossible to get your home dir!"),
+    // }
+    //
+    // git_message_path_string.push(".gitmessage");
+    let commit_msg_params = PrepareCommitMsgParams::new();
 
-    git_message_path_string.push(".gitmessage");
-
-    let git_message = read_to_string(Path::new(&git_message_path_string.into_os_string()))
+    let git_message = read_to_string(Path::new(&commit_msg_params.commit_msg_file))
         .expect("Could not read gitmessage template");
 
     let mut types_list_trigger = false;

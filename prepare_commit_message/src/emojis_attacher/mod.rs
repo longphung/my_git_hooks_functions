@@ -1,6 +1,4 @@
-use std::fs::read_to_string;
 use std::io;
-use std::path::Path;
 use crate::PrepareCommitMsgParams;
 
 pub struct EmojisAttacher;
@@ -58,13 +56,10 @@ impl EmojisAttacher {
 fn get_message_types() -> Vec<String> {
     let commit_msg_params = PrepareCommitMsgParams::new();
 
-    let git_message = read_to_string(Path::new(&commit_msg_params.commit_msg_file))
-        .expect("Could not read gitmessage template");
-
     let mut types_list_trigger = false;
     let mut types: Vec<Vec<&str>> = vec![];
 
-    for line in git_message.split("\n") {
+    for line in commit_msg_params.commit_msg_content.split("\n") {
         if line.contains("<type>") {
             types_list_trigger = true;
             continue;

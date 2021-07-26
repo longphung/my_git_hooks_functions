@@ -13,7 +13,7 @@ impl EmojisAttacher {
         let mut count = 0;
         let messages_types = get_message_types();
         let mut available_options: Vec<usize> = vec![];
-        for message_type in get_message_types() {
+        for message_type in &messages_types {
             count += 1;
             available_options.push(count);
             println!("{}. {}", count, message_type);

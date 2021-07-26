@@ -2,7 +2,6 @@ use std::env::args;
 
 pub mod emojis_attacher;
 
-// const AVAILABLE_COMMIT_SOURCES: [&str; 5] = ["message", "template", "merge", "squash", "commit"];
 pub struct PrepareCommitMsgParams {
     commit_msg_file: String,
     commit_source: String,

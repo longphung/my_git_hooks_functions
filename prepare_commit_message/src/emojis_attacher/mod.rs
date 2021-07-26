@@ -56,13 +56,6 @@ impl EmojisAttacher {
 }
 
 fn get_message_types() -> Vec<String> {
-    // let mut git_message_path_string;
-    // match home::home_dir() {
-    //     Some(path) => git_message_path_string = path,
-    //     None => panic!("Impossible to get your home dir!"),
-    // }
-    //
-    // git_message_path_string.push(".gitmessage");
     let commit_msg_params = PrepareCommitMsgParams::new();
 
     let git_message = read_to_string(Path::new(&commit_msg_params.commit_msg_file))

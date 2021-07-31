@@ -28,6 +28,6 @@ impl CommitMsgParams {
         };
         let commit_msg_content = read_to_string(Path::new(&commit_msg_file)).expect(&format!("Could not read commit message from {}", commit_source));
 
-        CommitMsgParams { commit_msg_file, commit_source, sha1, commit_msg_content }
+        Self { commit_msg_file, commit_source, sha1, commit_msg_content }
     }
 }

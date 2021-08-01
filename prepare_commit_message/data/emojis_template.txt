@@ -1,0 +1,38 @@
+# Example <type> values:
+# 🥺 chore: add Oyster build script
+# 📚 docs: explain hat wobble
+# ✨ feat: add beta sequence
+# 🐞 fix: remove broken confirmation message
+# 🔨 refactor: share logic between 4d3d3d3 and flarhgunnstow
+# 💄 style: convert tabs to spaces
+# ✅ test: ensure Tayne retains clothing
+# </type>
+
+# Example <scope> values:
+# init
+# runner
+# watcher
+# config
+# web-server
+# proxy
+# etc.
+
+# <body> emojis context: 
+#
+# Performance: 🐎
+# Improve format/structure: 🎨
+# Removing code/files: 🔥
+# General update: ⚡
+# Security: 🔒
+# Upgrading dependencies: ⬆️
+# Downgrading dependencies: ⬇️
+# Lint: 👕
+# Critical hotfix: 🚑
+# Configuration files: 🔧
+# Bad code / need improv: 💩
+# Breaking changes: 💥
+# Code review changes: 👌
+# Move/rename repository: 🚚
+# Accessibility: ♿
+# Work in progress: 🚧
+# New package: 📦

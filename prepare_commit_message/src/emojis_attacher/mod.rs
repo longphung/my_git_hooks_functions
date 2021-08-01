@@ -1,4 +1,3 @@
-use crate::CommitMsgParams;
 use std::io;
 
 pub struct EmojisAttacher;
@@ -54,14 +53,11 @@ impl EmojisAttacher {
 }
 
 fn get_message_types() -> Vec<String> {
-    let CommitMsgParams {
-        commit_msg_content, ..
-    } = CommitMsgParams::new();
-
     let mut types_list_trigger = false;
     let mut types: Vec<Vec<&str>> = vec![];
+    let emojis_template = String::from_utf8_lossy(include_bytes!("../../data/emojis_template.txt"));
 
-    for line in commit_msg_content.split("\n") {
+    for line in emojis_template.split("\n") {
         if line.contains("<type>") {
             types_list_trigger = true;
             continue;

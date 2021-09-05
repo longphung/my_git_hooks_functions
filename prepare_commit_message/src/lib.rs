@@ -4,6 +4,7 @@ use std::path::Path;
 
 pub mod emojis_attacher;
 
+#[derive(Debug)]
 pub struct CommitMsgParams {
     pub commit_msg_file: String,
     pub commit_source: String,

@@ -6,9 +6,13 @@ use prepare_commit_message::CommitMsgParams;
 
 fn main() {
     let mut messages = vec![];
-    let CommitMsgParams { commit_source, .. } = CommitMsgParams::new();
+    let commit_message_params = CommitMsgParams::new();
 
-    if commit_source == "template" || commit_source == "message" {
+    println!("{:#?}", commit_message_params);
+
+    if commit_message_params.commit_source == "template"
+        || commit_message_params.commit_source == "message"
+    {
         messages.push(EmojisAttacher::init());
     }
 

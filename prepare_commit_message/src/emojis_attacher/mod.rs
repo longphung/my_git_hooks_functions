@@ -42,7 +42,7 @@ impl EmojisAttacher {
                         return String::new();
                     }
 
-                    return format!("{}:\n", mapped_selection);
+                    return format!("{}: ", mapped_selection);
                 }
                 Err(_) => {
                     println!("\nNot a 1 valid choice. Choose again.\n");

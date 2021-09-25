@@ -16,5 +16,5 @@ fn main() {
         messages.push(EmojisAttacher::init());
     }
 
-    append_to_git_message(&messages);
+    append_to_git_message(&messages, &commit_message_params);
 }

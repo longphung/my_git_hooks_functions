@@ -10,6 +10,7 @@ fn main() {
 
     println!("{:#?}", commit_message_params);
 
+    // TODO: handle, do not run on rebase picks
     if commit_message_params.commit_source == "template"
         || commit_message_params.commit_source == "message"
     {

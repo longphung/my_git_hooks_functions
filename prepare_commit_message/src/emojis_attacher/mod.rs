@@ -46,7 +46,7 @@ impl EmojisAttacher {
                     return format!("{}: ", mapped_selection);
                 }
                 Err(_) => {
-                    println!("\nNot a 1 valid choice. Choose again.\n");
+                    println!("\nNot a valid choice. Choose again.\n");
                 }
             }
         }

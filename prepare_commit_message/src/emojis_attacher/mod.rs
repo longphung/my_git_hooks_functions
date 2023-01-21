@@ -27,7 +27,7 @@ impl EmojisAttacher {
 
             println!("Selection: {}", trimmed_selection);
 
-            match *trimmed_selection.parse::<usize>() {
+            match (*trimmed_selection).parse::<usize>() {
                 Ok(selection) => {
                     if selection > messages_types.len() {
                         println!(

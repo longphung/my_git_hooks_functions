@@ -17,17 +17,17 @@ impl EmojisAttacher {
 
         println!("Choose a type by No.:");
 
-        let mut selection = String::new();
-
         loop {
+            let mut selection = String::new();
             io::stdin()
                 .read_line(&mut selection)
                 .expect("Error while reading input");
 
-            println!("Selection: {}", selection);
-            selection = String::new();
+            let trimmed_selection = selection.trim();
 
-            match selection.trim().parse::<usize>() {
+            println!("Selection: {}", trimmed_selection);
+
+            match *trimmed_selection.parse::<usize>() {
                 Ok(selection) => {
                     if selection > messages_types.len() {
                         println!(

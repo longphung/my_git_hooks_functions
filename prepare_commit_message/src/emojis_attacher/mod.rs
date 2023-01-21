@@ -25,6 +25,7 @@ impl EmojisAttacher {
                 .expect("Error while reading input");
 
             println!("Selection: {}", selection);
+            selection = String::new();
 
             match selection.trim().parse::<usize>() {
                 Ok(selection) => {
